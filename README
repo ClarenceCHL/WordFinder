@@ -1,0 +1,92 @@
+Name: Haolun Cheng
+CS 455 PA4
+Fall 2021
+
+----------------------------------------------
+CERTIFY IT'S YOUR WORK
+
+"I certify that the work submitted for this assignment does not
+violate USC's student conduct code.  In particular, the work is my
+own, not a collaboration, and does not involve code created by other
+people, except for the the resources explicitly mentioned in the CS 455
+Course Syllabus.  And I did not share my solution or parts of it with
+other students in the course."
+
+Initial below to "sign" the above statement:
+HC
+
+----------------------------------------------
+ACKNOWLEDGE ANY OUTSIDE SOURCES
+
+List here any code you submitted for this assignment that was written
+with significant help of a course staff member, or code used from the
+textbook.  Be specific about what methods or algorithms are involved,
+and what sections of the textbook are involved (if applicable): [you do
+not need to list any of the code that we wrote for the assignment,
+i.e., the contents of the starter files for the assignment]
+
+NONE.
+
+----------------------------------------------
+KNOWN BUGS or LIMITATIONS:
+
+No bugs or limitations in my program.
+
+----------------------------------------------
+DESCRIPTION OF YOUR CLASS DESIGN AND ALGORITHMS AND DATA STRUCTURES USED:
+
+The below data structures and algorithms used for each class are in compliance with
+the "second approach" mentioned in the project description.
+
+1. Rack.java:
+    Data Structures Used: HashMap, ArrayList, String, int array.
+    Algorithms:
+        Put all input string letters into a hashmap.
+        Get a string of unique letters from the hashmap key set,
+        and get the multiplicity of each unique letter from the hashmap values.
+        From the string unique and int array mult, recursively
+        find all subsets of the string starting at index k. Return an array list of
+        strings representing all subsets.
+
+2. ScoreTable.java:
+    Data Structures Used: HashMap< HashSet< Character >, Integer>, int.
+    Algorithms:
+        Store the score table for each letter as a hashmap of hashset of characters to integers
+        where the hashset of characters is the key and all the integers are values. Iterate through
+        the hashmap and the input string which we want to evaluate the score. Look up the hashmap
+        for each char in the input string and then sum up the total score for all chars. Return
+        the total score.
+
+3. AnagramDictionary.java:
+    Data Structures Used: HashMap< String, HashSet< String >>.
+    Algorithms:
+        Firstly check if the dictionary has duplicate words inside. If yes, we throw an exception.
+        Otherwise, we proceed to process the dictionary by putting each word inside the dictionary
+        in a hashmap. Note that everytime we put in a word, we put that word into one of the values 
+        , hashset of strings, in the hashmap. In other words, we always sort each char of the word in 
+        alphabetical order before we can compare it with keys in the hashmap. Keys in the hashmap are 
+        all alphabetically sorted strings for the purpose of new word comparisons. After process the dictionary, 
+        we obtain a anagram dictionary in our hashmap. Therefore, when we receive an input string, we 
+        sort the chars of that string in alphabetical order and look it up in our hashmap. If there is 
+        a match, we return the hashset of strings that matched key corresponds to.
+
+4. WordFinder.java:
+    Data Structures Used: TreeMap< Integer, List< String >>.
+    Algorithms:
+        Find all anagrams for all subsets of the input rack. For each anagram, we can look
+        up the score table to get a score. Put scores and their corresponding words into a
+        treemap by also calling a reverseOrder() function such that all score-word combinations
+        are listed from word with the highest score to word with the lowest score. Furthermore,
+        words with the same score are sorted in alphabetical order. Finally, we print out
+        the sorted score-word combinations in the main method.
+
+
+----------------------------------------------
+ANY OTHER NOTES FOR THE GRADER:
+
+None.
+
+
+
+
+
